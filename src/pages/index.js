@@ -6,7 +6,7 @@ import CompanyListSection from "@/components/section/CompanyListSection";
 import HeroSection from "@/components/section/HeroSection";
 import WhyWaxoSection from "@/components/section/WhyWaxoSection";
 
-export default function HomePage({ companies, categories }) {
+export default function HomePage({ companies, categories, error }) {
   const filterRef = useRef();
 
   return (
@@ -25,7 +25,7 @@ export default function HomePage({ companies, categories }) {
         <HeroSection {...{ filterRef }} />
         <WhyWaxoSection />
         <hr />
-        <CompanyListSection {...{ companies, categories, filterRef }} />
+        <CompanyListSection {...{ companies, categories, filterRef, error }} />
       </section>
     </>
   );
@@ -33,7 +33,7 @@ export default function HomePage({ companies, categories }) {
 
 export async function getServerSideProps(context) {
   try {
-    const filePath = path.join(process.cwd(), "src/data/companies.json");
+    const filePath = path.join(process.cwd(), "src/data/companies.jsonz");
     const jsonData = fs.readFileSync(filePath, "utf-8");
     let companies = JSON.parse(jsonData);
     const categories = Array.from(new Set(companies.map((c) => c.category)));
@@ -60,7 +60,6 @@ export async function getServerSideProps(context) {
       props: {
         companies,
         categories,
-        hasError: false,
       },
     };
   } catch (err) {
@@ -69,7 +68,7 @@ export async function getServerSideProps(context) {
       props: {
         companies: [],
         categories: [],
-        hasError: true,
+        error: "Something went wrong while fetching companies.",
       },
     };
   }

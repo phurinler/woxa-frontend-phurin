@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import ListPagination from "@/components/pagination/ListPagination";
 import EmptyAlert from "@/components/empty/EmptyAlert";
+import ErrorAlert from "@/components/error/errorAlert";
+import CompanyDrawer from "@/components/drawer/CompanyDrawer";
 import { pageLimit } from "@/constants/config";
 import { formatSearchedFilter } from "@/lib/utils";
-import CompanyDrawer from "@/components/drawer/CompanyDrawer";
 
-const CompanyList = ({ companies: data }) => {
+const CompanyList = ({ companies: data, error }) => {
   const router = useRouter();
   const query = router.query;
   const search = formatSearchedFilter(query);
@@ -22,7 +23,9 @@ const CompanyList = ({ companies: data }) => {
           กำลังค้นหา: {search}
         </p>
       </div>
-      {companies.length === 0 ? (
+      {error ? (
+        <ErrorAlert {...{ error }} />
+      ) : companies.length === 0 ? (
         <EmptyAlert />
       ) : (
         companies.map((company) => (

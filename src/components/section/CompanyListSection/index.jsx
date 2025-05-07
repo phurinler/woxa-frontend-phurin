@@ -1,7 +1,7 @@
 import CompanyFilter from "./CompanyFilter";
 import CompanyList from "./CompanyList";
 
-const CompanyListSection = ({ companies, categories, filterRef }) => {
+const CompanyListSection = ({ companies, categories, filterRef, error }) => {
   const totalCompanies = companies?.length;
 
   return (
@@ -10,7 +10,7 @@ const CompanyListSection = ({ companies, categories, filterRef }) => {
       className="flex flex-col lg:grid lg:grid-cols-3 gap-12"
     >
       <CompanyFilter {...{ totalCompanies, categories, filterRef }} />
-      <CompanyList {...{ companies }} />
+      <CompanyList {...{ companies, error }} />
     </div>
   );
 };
