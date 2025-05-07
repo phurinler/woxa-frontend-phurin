@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -10,7 +10,15 @@ import { pageLimit } from "@/constants/config";
 const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
   const nameRef = useRef();
   const router = useRouter();
+  const query = router.query;
   const [categoryFilter, setCategoryFilter] = useState([]);
+
+  useEffect(() => {
+    if (query) {
+      if (query.name) nameRef.current.value = query.name;
+      if (query.category) setCategoryFilter(query.category);
+    }
+  }, [query]);
 
   const handleToggleCategory = (category) => {
     setCategoryFilter((prevState) => {
