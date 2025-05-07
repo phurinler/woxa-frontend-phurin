@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import CompanyCard from "@/components/card/CompanyCard";
 import ListPagination from "@/components/pagination/ListPagination";
-import EmptyAlert from "@/components/EmptyState/EmptyAlert";
+import EmptyAlert from "@/components/empty/EmptyAlert";
 import { pageLimit } from "@/constants/config";
 import { formatSearchedFilter } from "@/lib/utils";
+import CompanyDrawer from "@/components/drawer/CompanyDrawer";
 
 const CompanyList = ({ companies: data }) => {
   const router = useRouter();
@@ -26,7 +26,7 @@ const CompanyList = ({ companies: data }) => {
         <EmptyAlert />
       ) : (
         companies.map((company) => (
-          <CompanyCard key={company.id} {...{ company }} />
+          <CompanyDrawer key={company.id} {...{ company }} />
         ))
       )}
       <ListPagination total={data?.length} {...{ page, setPage }} />
