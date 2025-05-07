@@ -22,10 +22,14 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
 
   const handleToggleCategory = (category) => {
     setCategoryFilter((prevState) => {
-      if (prevState.includes(category)) {
-        return prevState.filter((item) => item !== category);
+      const prevCategoryFilter = Array.isArray(prevState)
+        ? prevState
+        : [prevState];
+
+      if (prevCategoryFilter.includes(category)) {
+        return prevCategoryFilter.filter((item) => item !== category);
       } else {
-        return [...prevState, category];
+        return [...prevCategoryFilter, category];
       }
     });
   };
