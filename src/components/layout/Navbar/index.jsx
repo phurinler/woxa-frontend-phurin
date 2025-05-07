@@ -15,7 +15,7 @@ const Navbar = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <section className="w-full border border-b-slate-500">
+    <section className="w-full backdrop-blur-sm border border-b-slate-500 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto w-full flex justify-between md:justify-evenly xl:justify-between items-center px-6 md:px-0">
         <Link href="/" className="py-4 md:py-0">
           <Image src="/waxo.png" width="100" height="36" alt="logo" />
