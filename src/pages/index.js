@@ -1,20 +1,33 @@
 import { useRef } from "react";
 import fs from "fs";
 import path from "path";
+import Head from "next/head";
 import CompanyListSection from "@/components/section/CompanyListSection";
 import HeroSection from "@/components/section/HeroSection";
 import WhyWaxoSection from "@/components/section/WhyWaxoSection";
 
-export default function Home({ companies, categories }) {
+export default function HomePage({ companies, categories }) {
   const filterRef = useRef();
 
   return (
-    <section className="max-w-7xl w-full mx-auto flex flex-col gap-y-12 py-12 px-8 md:px-16 ">
-      <HeroSection {...{ filterRef }} />
-      <WhyWaxoSection />
-      <hr />
-      <CompanyListSection {...{ companies, categories, filterRef }} />
-    </section>
+    <>
+      <Head>
+        <title>Home - Waxo App</title>
+        <meta
+          name="description"
+          content="Welcome to Waxo App - Explore Finance Companies."
+        />
+        <meta name="keywords" content="Waxo App, homepage, nextjs" />
+        <meta name="author" content="Waxo App" />
+      </Head>
+
+      <section className="max-w-7xl w-full mx-auto flex flex-col gap-y-12 py-12 px-8 md:px-16 ">
+        <HeroSection {...{ filterRef }} />
+        <WhyWaxoSection />
+        <hr />
+        <CompanyListSection {...{ companies, categories, filterRef }} />
+      </section>
+    </>
   );
 }
 
