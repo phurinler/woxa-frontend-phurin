@@ -1,10 +1,46 @@
+import { useRef, useState } from "react";
+import { useRouter } from "next/router";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Toggle } from "@/components/ui/toggle";
 
-const CompanyFilter = () => {
+const CompanyFilter = ({ categories, filterRef }) => {
+  const nameRef = useRef();
+  const router = useRouter();
+  const [categoryFilter, setCategoryFilter] = useState([]);
+
+  const handleToggleCategory = (category) => {
+    setCategoryFilter((prevState) => {
+      if (prevState.includes(category)) {
+        return prevState.filter((item) => item !== category);
+      } else {
+        return [...prevState, category];
+      }
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = nameRef.current.value ?? "";
+
+    const query = {};
+    if (name) query.name = name;
+    if (categoryFilter?.length) query.category = categoryFilter;
+
+    router
+      .push({
+        pathname: "/",
+        query,
+      })
+      .then(() => {
+        filterRef.current.scrollIntoView({ behavior: "smooth" });
+      });
+  };
+
   return (
     <div className="col-span-1">
       <div className="flex flex-col gap-y-4">
@@ -17,22 +53,32 @@ const CompanyFilter = () => {
 
         <Card>
           <CardContent>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col gap-y-2">
                   <Label htmlFor="name" className="font-semibold">
                     Name
                   </Label>
-                  <Input id="name" placeholder="Name of company" />
+                  <Input
+                    ref={nameRef}
+                    id="name"
+                    placeholder="Name of company"
+                  />
                 </div>
                 <div className="flex flex-col gap-y-2">
                   <Label htmlFor="categories" className="font-semibold">
                     Categories
                   </Label>
                   <div className="flex gap-2">
-                    <Toggle variant="outline">Fintech</Toggle>
-                    <Toggle variant="outline">Broker</Toggle>
-                    <Toggle variant="outline">Payment</Toggle>
+                    {categories.map((category) => (
+                      <Toggle
+                        key={category}
+                        variant="outline"
+                        onPressedChange={() => handleToggleCategory(category)}
+                      >
+                        {category}
+                      </Toggle>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -40,7 +86,7 @@ const CompanyFilter = () => {
           </CardContent>
           <CardFooter className="flex justify-end gap-x-4">
             <Button variant="outline">Reset</Button>
-            <Button>Search</Button>
+            <Button onClick={handleSubmit}>Search</Button>
           </CardFooter>
         </Card>
       </div>

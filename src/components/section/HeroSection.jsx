@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 
-const HeroSection = () => {
+const HeroSection = ({ filterRef }) => {
+  const handleClick = () => {
+    filterRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="md:grid md:grid-cols-12 md:gap-x-15 flex flex-col items-center">
       <div className="flex flex-col justify-center gap-y-4 col-span-7">
@@ -13,7 +17,11 @@ const HeroSection = () => {
           Fintech, โบรกเกอร์ และผู้ให้บริการชำระเงินที่เชื่อถือได้
           เปรียบเทียบข้อดี ข้อเสีย ก่อนตัดสินใจใช้บริการ
         </p>
-        <Button className="max-w-fit mt-4 md:mt-8 mx-auto md:mx-0" size="lg">
+        <Button
+          className="max-w-fit mt-4 md:mt-8 mx-auto md:mx-0"
+          size="lg"
+          onClick={handleClick}
+        >
           ดูรีวิวบริษัท
         </Button>
       </div>

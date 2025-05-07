@@ -20,7 +20,6 @@ export default function ThemeProvider({ children }) {
   }, []);
 
   const toggleTheme = () => {
-    console.log("toggleTheme");
     setIsDarkMode((prevState) => !prevState);
     if (!isDarkMode) {
       document.documentElement.classList.add("dark");
