@@ -33,7 +33,7 @@ export default function HomePage({ companies, categories, error }) {
 
 export async function getServerSideProps(context) {
   try {
-    const filePath = path.join(process.cwd(), "src/data/companies.jsonz");
+    const filePath = path.join(process.cwd(), "src/data/companies.json");
     const jsonData = fs.readFileSync(filePath, "utf-8");
     let companies = JSON.parse(jsonData);
     const categories = Array.from(new Set(companies.map((c) => c.category)));
