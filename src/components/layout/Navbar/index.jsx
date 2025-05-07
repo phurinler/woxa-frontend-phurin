@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <section className="w-full border border-b-slate-500">
-      <nav className="max-w-7xl mx-auto w-full flex justify-between md:justify-evenly lg:justify-between items-center px-6 md:px-0">
+      <nav className="max-w-7xl mx-auto w-full flex justify-between md:justify-evenly xl:justify-between items-center px-6 md:px-0">
         <Link href="/" className="py-4 md:py-0">
           <Image src="/waxo.png" width="100" height="36" alt="logo" />
         </Link>

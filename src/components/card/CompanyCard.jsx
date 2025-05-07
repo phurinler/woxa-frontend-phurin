@@ -12,7 +12,7 @@ const CompanyCard = ({ company }) => {
         <StarRating score={company.averageScore} />
       </div>
       <div className="flex gap-x-3 items-end">
-        <h4 className="text-lg font-bold">{company.name}</h4>
+        <h4 className="text-md md:text-lg font-bold">{company.name}</h4>
       </div>
     </div>
   );

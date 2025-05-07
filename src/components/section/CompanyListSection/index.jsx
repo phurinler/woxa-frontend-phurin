@@ -7,7 +7,7 @@ const CompanyListSection = ({ companies, categories, filterRef }) => {
   return (
     <div
       ref={filterRef}
-      className="flex flex-col md:grid md:grid-cols-3 gap-12"
+      className="flex flex-col lg:grid lg:grid-cols-3 gap-12"
     >
       <CompanyFilter {...{ totalCompanies, categories, filterRef }} />
       <CompanyList {...{ companies }} />

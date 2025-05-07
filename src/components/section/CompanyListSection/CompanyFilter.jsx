@@ -22,6 +22,19 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
     });
   };
 
+  const handleReset = () => {
+    nameRef.current.value = "";
+    setCategoryFilter([]);
+    router
+      .push({
+        pathname: "/",
+        query: {},
+      })
+      .then(() => {
+        filterRef.current.scrollIntoView();
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -37,7 +50,7 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
         query,
       })
       .then(() => {
-        filterRef.current.scrollIntoView({ behavior: "smooth" });
+        filterRef.current.scrollIntoView();
       });
   };
 
@@ -77,6 +90,7 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
                       <Toggle
                         key={category}
                         variant="outline"
+                        pressed={categoryFilter.includes(category)}
                         onPressedChange={() => handleToggleCategory(category)}
                       >
                         {category}
@@ -88,7 +102,9 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
             </form>
           </CardContent>
           <CardFooter className="flex justify-end gap-x-4">
-            <Button variant="outline">Reset</Button>
+            <Button variant="outline" onClick={handleReset}>
+              Reset
+            </Button>
             <Button onClick={handleSubmit}>Search</Button>
           </CardFooter>
         </Card>

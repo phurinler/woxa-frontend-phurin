@@ -9,7 +9,7 @@ export default function Home({ companies, categories }) {
   const filterRef = useRef();
 
   return (
-    <section className="max-w-7xl w-full mx-auto flex flex-col gap-y-12 py-12 px-8">
+    <section className="max-w-7xl w-full mx-auto flex flex-col gap-y-12 py-12 px-8 md:px-16 ">
       <HeroSection {...{ filterRef }} />
       <WhyWaxoSection />
       <hr />
