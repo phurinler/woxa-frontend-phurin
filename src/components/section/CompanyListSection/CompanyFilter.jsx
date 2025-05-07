@@ -58,13 +58,13 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
     <div className="col-span-1">
       <div className="flex flex-col gap-y-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center md:text-start">
-          Explore companies
+          สำรวจบริษัทที่คุณสนใจ
         </h2>
         <h3 className="text-xl md:text-2xl font-bold text-center md:text-start">
-          Filter companies
+          ระบบกรองการค้นหา
         </h3>
         <p className="text-sm md:text-md font-bold text-center md:text-start text-slate-500">
-          1-{pageLimit} of {totalCompanies} results
+          1-{pageLimit} จาก {totalCompanies} ผลลัพธ์
         </p>
 
         <Card>
@@ -73,17 +73,17 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col gap-y-2">
                   <Label htmlFor="name" className="font-semibold">
-                    Name
+                    บริษัท
                   </Label>
                   <Input
                     ref={nameRef}
                     id="name"
-                    placeholder="Name of company"
+                    placeholder="ชื่อบริษัทที่ต้องการค้นหา"
                   />
                 </div>
                 <div className="flex flex-col gap-y-2">
                   <Label htmlFor="categories" className="font-semibold">
-                    Categories
+                    ประเภทธุรกิจ
                   </Label>
                   <div className="flex gap-2">
                     {categories.map((category) => (

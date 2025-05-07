@@ -13,7 +13,7 @@ export function formatSearchedFilter(query) {
     ? [query.category]
     : [];
 
-  const result = [...namePart, ...categoryPart].join(", ") || "All";
+  const result = [...namePart, ...categoryPart].join(", ") || "ทั้งหมด";
 
   return result;
 }
