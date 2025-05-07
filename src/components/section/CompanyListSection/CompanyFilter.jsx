@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Toggle } from "@/components/ui/toggle";
+import { pageLimit } from "@/constants/config";
 
-const CompanyFilter = ({ categories, filterRef }) => {
+const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
   const nameRef = useRef();
   const router = useRouter();
   const [categoryFilter, setCategoryFilter] = useState([]);
@@ -50,6 +50,9 @@ const CompanyFilter = ({ categories, filterRef }) => {
         <h3 className="text-xl md:text-2xl font-bold text-center md:text-start">
           Filter companies
         </h3>
+        <p className="text-sm md:text-md font-bold text-center md:text-start text-slate-500">
+          1-{pageLimit} of {totalCompanies} results
+        </p>
 
         <Card>
           <CardContent>
