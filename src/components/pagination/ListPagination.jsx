@@ -31,6 +31,8 @@ const ListPagination = ({ page, setPage, total }) => {
     });
   };
 
+  if (!total) return null;
+
   return (
     <Pagination>
       <PaginationContent>
