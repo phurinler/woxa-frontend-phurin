@@ -59,11 +59,11 @@
     </style>
 
     <!-- Title -->
-    <text x="500" y="30" text-anchor="middle" class="title">โครงสร้างโปรเจกต์ Waxo-Frontend-Phurin</text>
+    <text x="500" y="30" text-anchor="middle" class="title">โครงสร้างโปรเจกต์ Waxo App</text>
 
     <!-- Root folder -->
     <rect x="450" y="50" width="140" height="40" rx="6" class="main-folder" />
-    <text x="520" y="75" text-anchor="middle" fill="white" class="folder-text">Waxo-Frontend-Phurin</text>
+    <text x="520" y="75" text-anchor="middle" fill="white" class="folder-text">Waxo App</text>
 
     <!-- Main folders -->
     <rect x="200" y="130" width="100" height="30" rx="5" class="folder" />
