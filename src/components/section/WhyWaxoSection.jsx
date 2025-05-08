@@ -5,7 +5,7 @@ const WhyWaxoSection = () => {
     <div className="flex flex-col gap-y-12">
       <div className="max-w-2xl w-full mx-auto flex flex-col justify-center gap-y-6">
         <h2 className="text-2xl md:text-3xl font-bold text-center">
-          ประสบการณ์กับ WAXO
+          ทำไมต้อง Waxo App
         </h2>
         <div className="flex flex-col items-center">
           <Image
@@ -21,7 +21,7 @@ const WhyWaxoSection = () => {
           หรือผู้ให้บริการชำระเงินที่ปลอดภัยและสะดวกสบาย
           ที่นี่คือจุดเริ่มต้นของการตัดสินใจที่มั่นใจมากขึ้น
           ด้วยระบบรีวิวจากผู้ใช้งานจริง คุณสามารถอ่านประสบการณ์ตรง
-          เปรียบเทียบข้อดี-ข้อเสียของแต่ละบริษัท และดูคะแนนจากหลากหลายแง่มุม
+          เปรียบเทียบข้อดี ข้อเสียของแต่ละบริษัท และดูคะแนนจากหลากหลายแง่มุม
           เช่น ความน่าเชื่อถือ การใช้งาน บริการลูกค้า และความคุ้มค่า
           เราเชื่อว่าข้อมูลที่โปร่งใสและเป็นกลางจะช่วยให้คุณเลือกใช้บริการทางการเงินได้อย่างมั่นใจ
           ไม่ว่าจะเป็นมือใหม่ในโลกการเงิน
@@ -35,7 +35,7 @@ const WhyWaxoSection = () => {
           <Image src="/fintech.svg" width="200" height="200" alt="fintech" />
           <h3 className="text-lg md:text-xl font-medium">Fintech</h3>
           <p className="text-sm md:text-md text-center">
-            บริษัทเทคโนโลยีทางการเงินที่พัฒนาแอปหรือแพลตฟอร์มใหม่ ๆ
+            บริษัทเทคโนโลยีทางการเงินที่พัฒนาแอปหรือแพลตฟอร์มใหม่ๆ
             เพื่อให้บริการด้านการเงิน เช่น การกู้ยืม การลงทุน
           </p>
         </div>
