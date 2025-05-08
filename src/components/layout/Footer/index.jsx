@@ -12,7 +12,7 @@ const Footer = () => {
             >
               Phurin
             </a>
-            . Woxa Assignment for front-end developer application ❤️
+            . Woxa Assignment for front-end developer application
           </b>
         </p>
       </div>
