@@ -44,7 +44,7 @@ npm run dev
 ### คำอธิบาย
 
 ```
-Waxo-Frontend-Phurin/
+Woxa-Frontend-Phurin/
 │
 ├── public/                     # เก็บ assets แบบ public
 │
