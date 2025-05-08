@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import fs from "fs";
-import path from "path";
 import Head from "next/head";
 import CompanyListSection from "@/components/section/CompanyListSection";
 import HeroSection from "@/components/section/HeroSection";
@@ -32,43 +30,32 @@ export default function HomePage({ companies, categories, error }) {
 }
 
 export async function getServerSideProps(context) {
+  const { req, query } = context;
+  const queryParams = new URLSearchParams(query).toString();
+
+  const protocol = req.headers["x-forwarded-proto"] || "http";
+  const host = req.headers.host;
+  const baseUrl = `${protocol}://${host}`;
+  const url = `${baseUrl}/api/companies?${queryParams}`;
+
   try {
-    const filePath = path.join(process.cwd(), "src/data/companies.json");
-    const jsonData = fs.readFileSync(filePath, "utf-8");
-    let companies = JSON.parse(jsonData);
-    const categories = Array.from(new Set(companies.map((c) => c.category)));
-
-    const { name, category } = context.query;
-
-    if (name) {
-      companies = companies.filter((c) =>
-        c.name.toLowerCase().includes(name.toLowerCase())
-      );
-    }
-
-    if (category) {
-      const selectedCategories = Array.isArray(category)
-        ? category.map((c) => c.toLowerCase())
-        : [category.toLowerCase()];
-
-      companies = companies.filter((c) =>
-        selectedCategories.includes(c.category.toLowerCase())
-      );
-    }
+    const res = await fetch(url);
+    const data = await res.json();
 
     return {
       props: {
-        companies,
-        categories,
+        companies: data.companies,
+        categories: data.categories,
+        error: data.error || null,
       },
     };
   } catch (err) {
-    console.error("fetching failed:", err);
+    console.error("Fetch failed:", err);
     return {
       props: {
         companies: [],
         categories: [],
-        error: "Something went wrong while fetching companies.",
+        error: "Failed to fetch companies.",
       },
     };
   }
