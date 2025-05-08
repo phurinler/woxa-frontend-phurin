@@ -31,12 +31,21 @@ export default function HomePage({ companies, categories, error }) {
 
 export async function getServerSideProps(context) {
   const { req, query } = context;
-  const queryParams = new URLSearchParams(query).toString();
-
   const protocol = req.headers["x-forwarded-proto"] || "http";
   const host = req.headers.host;
   const baseUrl = `${protocol}://${host}`;
-  const url = `${baseUrl}/api/companies?${queryParams}`;
+
+  const params = new URLSearchParams();
+  for (const key in query) {
+    const value = query[key];
+    if (Array.isArray(value)) {
+      value.forEach((v) => params.append(key, v));
+    } else {
+      params.append(key, value);
+    }
+  }
+
+  const url = `${baseUrl}/api/companies?${params.toString()}`;
 
   try {
     const res = await fetch(url);
