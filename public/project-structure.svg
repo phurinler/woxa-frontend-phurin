@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 850" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .folder {
+            fill: #ffd485;
+            stroke: #d9a85c;
+            stroke-width: 1.5;
+        }
+
+        .file {
+            fill: #f1f1f1;
+            stroke: #c5c5c5;
+            stroke-width: 1;
+        }
+
+        .config-file {
+            fill: #d5ebff;
+            stroke: #88b5db;
+            stroke-width: 1;
+        }
+
+        .line {
+            stroke: #666;
+            stroke-width: 1.2;
+        }
+
+        .main-folder {
+            fill: #4f88c8;
+            stroke: #3e6c9f;
+            stroke-width: 2;
+        }
+
+        .folder-text {
+            fill: #444;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .file-text {
+            fill: #222;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .group-label {
+            fill: #666;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-style: italic;
+        }
+
+        .title {
+            fill: #333;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Title -->
+    <text x="500" y="30" text-anchor="middle" class="title">โครงสร้างโปรเจกต์ Waxo-Frontend-Phurin</text>
+
+    <!-- Root folder -->
+    <rect x="450" y="50" width="140" height="40" rx="6" class="main-folder" />
+    <text x="520" y="75" text-anchor="middle" fill="white" class="folder-text">Waxo-Frontend-Phurin</text>
+
+    <!-- Main folders -->
+    <rect x="200" y="130" width="100" height="30" rx="5" class="folder" />
+    <text x="250" y="150" text-anchor="middle" class="folder-text">public</text>
+    <line x1="520" y1="90" x2="520" y2="110" class="line" />
+    <line x1="520" y1="110" x2="250" y2="110" class="line" />
+    <line x1="250" y1="110" x2="250" y2="130" class="line" />
+
+    <rect x="450" y="130" width="100" height="30" rx="5" class="folder" />
+    <text x="500" y="150" text-anchor="middle" class="folder-text">src</text>
+    <line x1="520" y1="90" x2="520" y2="110" class="line" />
+    <line x1="520" y1="110" x2="500" y2="110" class="line" />
+    <line x1="500" y1="110" x2="500" y2="130" class="line" />
+
+    <!-- Config files -->
+    <rect x="650" y="130" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="147" text-anchor="middle" class="file-text">.gitignore</text>
+    <line x1="520" y1="90" x2="520" y2="110" class="line" />
+    <line x1="520" y1="110" x2="710" y2="110" class="line" />
+    <line x1="710" y1="110" x2="710" y2="130" class="line" />
+
+    <rect x="650" y="165" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="182" text-anchor="middle" class="file-text">components.json</text>
+    <line x1="710" y1="155" x2="710" y2="165" class="line" />
+
+    <rect x="650" y="200" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="217" text-anchor="middle" class="file-text">jsconfig.json</text>
+    <line x1="710" y1="190" x2="710" y2="200" class="line" />
+
+    <rect x="650" y="235" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="252" text-anchor="middle" class="file-text">next.config.mjs</text>
+    <line x1="710" y1="225" x2="710" y2="235" class="line" />
+
+    <rect x="650" y="270" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="287" text-anchor="middle" class="file-text">package-lock.json</text>
+    <line x1="710" y1="260" x2="710" y2="270" class="line" />
+
+    <rect x="650" y="305" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="322" text-anchor="middle" class="file-text">package.json</text>
+    <line x1="710" y1="295" x2="710" y2="305" class="line" />
+
+    <rect x="650" y="340" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="357" text-anchor="middle" class="file-text">postcss.config.mjs</text>
+    <line x1="710" y1="330" x2="710" y2="340" class="line" />
+
+    <rect x="650" y="375" width="120" height="25" rx="4" class="config-file" />
+    <text x="710" y="392" text-anchor="middle" class="file-text">README.md</text>
+    <line x1="710" y1="365" x2="710" y2="375" class="line" />
+
+    <!-- Src folders -->
+    <rect x="160" y="200" width="100" height="30" rx="5" class="folder" />
+    <text x="210" y="220" text-anchor="middle" class="folder-text">assets</text>
+    <line x1="500" y1="160" x2="500" y2="180" class="line" />
+    <line x1="500" y1="180" x2="210" y2="180" class="line" />
+    <line x1="210" y1="180" x2="210" y2="200" class="line" />
+
+    <rect x="280" y="200" width="100" height="30" rx="5" class="folder" />
+    <text x="330" y="220" text-anchor="middle" class="folder-text">components</text>
+    <line x1="500" y1="160" x2="500" y2="180" class="line" />
+    <line x1="500" y1="180" x2="330" y2="180" class="line" />
+    <line x1="330" y1="180" x2="330" y2="200" class="line" />
+
+    <!-- Components subfolders -->
+    <rect x="230" y="260" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="277" text-anchor="middle" class="folder-text">card</text>
+    <line x1="330" y1="230" x2="330" y2="245" class="line" />
+    <line x1="330" y1="245" x2="270" y2="245" class="line" />
+    <line x1="270" y1="245" x2="270" y2="260" class="line" />
+
+    <rect x="230" y="295" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="312" text-anchor="middle" class="folder-text">drawer</text>
+    <line x1="270" y1="285" x2="270" y2="295" class="line" />
+
+    <rect x="230" y="330" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="347" text-anchor="middle" class="folder-text">empty</text>
+    <line x1="270" y1="320" x2="270" y2="330" class="line" />
+
+    <rect x="230" y="365" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="382" text-anchor="middle" class="folder-text">error</text>
+    <line x1="270" y1="355" x2="270" y2="365" class="line" />
+
+    <rect x="230" y="400" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="417" text-anchor="middle" class="folder-text">layout</text>
+    <line x1="270" y1="390" x2="270" y2="400" class="line" />
+
+    <rect x="230" y="435" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="452" text-anchor="middle" class="folder-text">pagination</text>
+    <line x1="270" y1="425" x2="270" y2="435" class="line" />
+
+    <rect x="230" y="470" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="487" text-anchor="middle" class="folder-text">rating</text>
+    <line x1="270" y1="460" x2="270" y2="470" class="line" />
+
+    <rect x="230" y="505" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="522" text-anchor="middle" class="folder-text">section</text>
+    <line x1="270" y1="495" x2="270" y2="505" class="line" />
+
+    <rect x="230" y="540" width="80" height="25" rx="4" class="folder" />
+    <text x="270" y="557" text-anchor="middle" class="folder-text">ui</text>
+    <line x1="270" y1="530" x2="270" y2="540" class="line" />
+
+    <rect x="330" y="540" width="80" height="25" rx="4" class="file" />
+    <text x="370" y="557" text-anchor="middle" class="file-text">alert.jsx</text>
+    <line x1="310" y1="550" x2="330" y2="550" class="line" />
+
+    <text x="370" y="575" text-anchor="middle" class="group-label">+ 13 more UI components</text>
+
+    <!-- Other src folders -->
+    <rect x="400" y="200" width="100" height="30" rx="5" class="folder" />
+    <text x="450" y="220" text-anchor="middle" class="folder-text">constants</text>
+    <line x1="500" y1="160" x2="500" y2="180" class="line" />
+    <line x1="500" y1="180" x2="450" y2="180" class="line" />
+    <line x1="450" y1="180" x2="450" y2="200" class="line" />
+
+    <rect x="400" y="260" width="80" height="25" rx="4" class="file" />
+    <text x="440" y="277" text-anchor="middle" class="file-text">config.js</text>
+    <line x1="450" y1="230" x2="450" y2="260" class="line" />
+
+    <rect x="400" y="295" width="80" height="25" rx="4" class="file" />
+    <text x="440" y="312" text-anchor="middle" class="file-text">menu.js</text>
+    <line x1="450" y1="285" x2="450" y2="295" class="line" />
+
+    <rect x="520" y="200" width="100" height="30" rx="5" class="folder" />
+    <text x="570" y="220" text-anchor="middle" class="folder-text">data</text>
+    <line x1="500" y1="160" x2="500" y2="180" class="line" />
+    <line x1="500" y1="180" x2="570" y2="180" class="line" />
+    <line x1="570" y1="180" x2="570" y2="200" class="line" />
+
+    <rect x="520" y="260" width="120" height="25" rx="4" class="file" />
+    <text x="580" y="277" text-anchor="middle" class="file-text">companies.json</text>
+    <line x1="570" y1="230" x2="570" y2="260" class="line" />
+
+    <rect x="520" y="360" width="100" height="30" rx="5" class="folder" />
+    <text x="570" y="380" text-anchor="middle" class="folder-text">hooks</text>
+    <line x1="500" y1="160" x2="500" y2="340" class="line" />
+    <line x1="500" y1="340" x2="570" y2="340" class="line" />
+    <line x1="570" y1="340" x2="570" y2="360" class="line" />
+
+    <rect x="520" y="420" width="120" height="25" rx="4" class="file" />
+    <text x="580" y="437" text-anchor="middle" class="file-text">use-mobile.js</text>
+    <line x1="570" y1="390" x2="570" y2="420" class="line" />
+
+    <rect x="520" y="500" width="100" height="30" rx="5" class="folder" />
+    <text x="570" y="520" text-anchor="middle" class="folder-text">lib</text>
+    <line x1="500" y1="160" x2="500" y2="480" class="line" />
+    <line x1="500" y1="480" x2="570" y2="480" class="line" />
+    <line x1="570" y1="480" x2="570" y2="500" class="line" />
+
+    <rect x="520" y="560" width="120" height="25" rx="4" class="file" />
+    <text x="580" y="577" text-anchor="middle" class="file-text">utils.js</text>
+    <line x1="570" y1="530" x2="570" y2="560" class="line" />
+
+    <rect x="520" y="595" width="100" height="25" rx="4" class="folder" />
+    <text x="570" y="612" text-anchor="middle" class="folder-text">providers</text>
+    <line x1="570" y1="585" x2="570" y2="595" class="line" />
+
+    <rect x="520" y="630" width="140" height="25" rx="4" class="file" />
+    <text x="590" y="647" text-anchor="middle" class="file-text">ThemeProvider.jsx</text>
+    <line x1="570" y1="620" x2="570" y2="630" class="line" />
+
+    <rect x="520" y="700" width="100" height="30" rx="5" class="folder" />
+    <text x="570" y="720" text-anchor="middle" class="folder-text">pages</text>
+    <line x1="500" y1="160" x2="500" y2="680" class="line" />
+    <line x1="500" y1="680" x2="570" y2="680" class="line" />
+    <line x1="570" y1="680" x2="570" y2="700" class="line" />
+
+    <rect x="520" y="760" width="80" height="25" rx="4" class="folder" />
+    <text x="560" y="777" text-anchor="middle" class="folder-text">api</text>
+    <line x1="570" y1="730" x2="570" y2="760" class="line" />
+
+    <rect x="520" y="795" width="100" height="25" rx="4" class="file" />
+    <text x="570" y="812" text-anchor="middle" class="file-text">_app.jsx</text>
+    <line x1="570" y1="785" x2="570" y2="795" class="line" />
+
+    <text x="570" y="830" text-anchor="middle" class="group-label">+ 3 more page files</text>
+
+    <rect x="160" y="700" width="100" height="30" rx="5" class="folder" />
+    <text x="210" y="720" text-anchor="middle" class="folder-text">styles</text>
+    <line x1="500" y1="160" x2="500" y2="680" class="line" />
+    <line x1="500" y1="680" x2="210" y2="680" class="line" />
+    <line x1="210" y1="680" x2="210" y2="700" class="line" />
+
+    <rect x="160" y="760" width="100" height="25" rx="4" class="file" />
+    <text x="210" y="777" text-anchor="middle" class="file-text">global.css</text>
+    <line x1="210" y1="730" x2="210" y2="760" class="line" />
+</svg>
