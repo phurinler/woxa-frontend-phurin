@@ -46,7 +46,7 @@ npm run dev
 ```
 Waxo-Frontend-Phurin/
 │
-├── public/                     # เก็บภาพและ assets แบบ public
+├── public/                     # เก็บ assets แบบ public
 │
 ├── src/                        # ไฟล์ข้อมูลโปรเจค
 │   │
@@ -55,13 +55,13 @@ Waxo-Frontend-Phurin/
 │   ├── components/             # เก็บ React components
 │   │   │
 │   │   ├── card/              # เก็บ card component
-│   │   │   └── CompanyCard.jsx    # แสดง company card component
+│   │   │   └── CompanyCard.jsx    # แสดง company card รายละเอียดโดยย่อยของบริษัท
 │   │   │
 │   │   ├── drawer/            # เก็บ company drawer component
 │   │   │   └── CompanyDrawer.jsx  # แสดง modal รายละเอียดเพิ่มเติมจาก card
 │   │   │
 │   │   ├── empty/             # เก็บ empty state component
-│   │   │   ├── EmptyAlert.jsx     # แสดง Alert แบบว่าไม่มีพบข้อมูล
+│   │   │   ├── EmptyAlert.jsx     # แสดง Alert ว่า ไม่พบข้อมูลที่ค้นหา
 │   │   │   └── EmptyPage.jsx      # แสดงหน้าเพจแบบ empty กำลังอยู่ในขั้นตอนสร้าง
 │   │   │
 │   │   ├── error/             # เก็บ error state component
@@ -85,11 +85,11 @@ Waxo-Frontend-Phurin/
 │   │   │   └── StarRating.jsx     # แสดงคะแนนเฉลี่ยจากรีวิวโดยใช้ badge component
 │   │   │
 │   │   ├── section/           # เก็บ section component ต่างๆ
-│   │   │   ├── HeroSection.jsx    # แสดงคอนเทนท์แนะนำ Waxo App ส่วนแรกของหน้า Home
-│   │   │   ├── WhyWaxoSection.jsx # แสดงคอนเทนท์ประสบการณ์ Waxo App ส่วนที่สองของหน้า Home
+│   │   │   ├── HeroSection.jsx    # แสดงคอนเทนท์แนะนำ Waxo App เป็นส่วนแรกของหน้า Home
+│   │   │   ├── WhyWaxoSection.jsx # แสดงคอนเทนท์ประสบการณ์ Waxo App เป็นส่วนที่สองของหน้า Home
 │   │   │   │
 │   │   │   └── CompanyListSection/  # เก็บ company list section
-│   │   │       ├── index.jsx          # รวบรวม company filter และ company list
+│   │   │       ├── index.jsx          # รวบรวม company filter และ company list เป็นส่วนที่สามของหน้า Home
 │   │   │       ├── CompanyFilter.jsx  # แสดง section ฝั่งซ้าย ฟอร์มสำหรับ filter
 │   │   │       └── CompanyList.jsx    # แสดง section ฝั่งขวา รายการบริษัทที่ค้นหา
 │   │   │
@@ -114,10 +114,10 @@ Waxo-Frontend-Phurin/
 │   │   └── menu.js               # เก็บ menu ที่นำไปแสดงบน navbar
 │   │
 │   ├── data/                  # เก็บข้อมูลต่างๆ
-│   │   └── companies.json        # เก็บข้อมูลรายของบริษัทต่างๆ
+│   │   └── companies.json        # เก็บข้อมูลรายการของบริษัทต่างๆ
 │   │
 │   ├── hooks/                 # เก็บฟังก์ชั่นแบบ hook
-│   │   └── use-mobile.js         # ฟังก์ชั่นสำหรับเช็คหน้าจอว่าเป็น mobile หรือไม่
+│   │   └── use-mobile.js         # ฟังก์ชั่นสำหรับเช็คขนาดหน้าจอว่าเป็น mobile หรือไม่
 │   │
 │   ├── lib/                   # เก็บ utility functions, helpers หรือ providers
 │   │   ├── utils.js              # เก็บ utility functions
@@ -127,7 +127,7 @@ Waxo-Frontend-Phurin/
 │   │
 │   ├── pages/                 # เก็บ page ต่างๆและจัดการ router
 │   │   ├── api/                 # เก็บ api route
-│   │   │   └── companies.js       # เรียกไฟล์ json และคืนค่ากลับไป
+│   │   │   └── companies.js       # เรียกอ่านข้อมูลจากไฟล์ json และคืนค่ากลับไป
 │   │   │
 │   │   ├── _app.jsx             # แสดง app component
 │   │   ├── _document.jsx        # แสดง document component
@@ -136,21 +136,27 @@ Waxo-Frontend-Phurin/
 │   │   └── index.jsx            # แสดงหน้าเพจ Home
 │   │
 │   └── styles/                # เก็บไฟล์ css
-│       └── global.css            # เก็บ class และ utilities สำหรับตกแต่ง
+│       └── global.css            # เก็บ classes และ utilities สำหรับตกแต่ง
 │
 ├── .gitignore                # ยกเว้นการ commit ไฟล์ที่กำหนด
 ├── components.json           # จัดการ shadcn/ui
 ├── jsconfig.json             # config สำหรับ JavaScript compiler และ editor
 ├── next.config.mjs           # config สำหรับ Next.js
-├── package-lock.json         # ล็อคเวอร์ชันที่แน่นอนของ dependencies
+├── package-lock.json         # ล็อคเวอร์ชันของ dependencies
 ├── package.json              # project dependencies และ scripts
 ├── postcss.config.mjs        # config สำหรับ PostCSS
-└── README.md                 # เอกสารโปรเจค
+└── README.md                 # เอกสารสำหรับโปรเจค
 ```
 
 ### โครงสร้างหน้า Home
 
 ![Waxo App - Home Structure](public/home-structure.svg)
+
+### รายละเอียดของหน้า About us และ Company
+
+![Waxo App - About us/Company Structure](public/soon.png)
+
+หน้า About us และ Company จะแสดงเนื้อหาเกี่ยวกับ coming soon หรือกำลังสร้างอยู่
 
 ## เทคโนโลยีที่ใช้และเหตุผล
 
