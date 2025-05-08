@@ -48,7 +48,7 @@ const CompanyList = ({ companies: data, error }) => {
   return (
     <div className="flex flex-col gap-y-4 col-span-2">
       <div>
-        <p className="text-sm md:text-md font-medium text-slate-500">
+        <p className="text-sm md:text-base font-medium text-slate-500">
           กำลังค้นหา: {search}
         </p>
       </div>

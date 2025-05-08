@@ -15,7 +15,7 @@ const WhyWaxoSection = () => {
             alt="conversation"
           />
         </div>
-        <p className="text-sm md:text-md text-center">
+        <p className="text-sm md:text-base text-center">
           ไม่ว่าคุณจะมองหาบริษัทฟินเทคที่ล้ำสมัย
           โบรกเกอร์ที่น่าเชื่อถือสำหรับการลงทุน
           หรือผู้ให้บริการชำระเงินที่ปลอดภัยและสะดวกสบาย
@@ -34,7 +34,7 @@ const WhyWaxoSection = () => {
         <div className="flex flex-col text-center items-center gap-y-4">
           <Image src="/fintech.svg" width="200" height="200" alt="fintech" />
           <h3 className="text-lg md:text-xl font-medium">Fintech</h3>
-          <p className="text-sm md:text-md text-center">
+          <p className="text-sm md:text-base text-center">
             บริษัทเทคโนโลยีทางการเงินที่พัฒนาแอปหรือแพลตฟอร์มใหม่ๆ
             เพื่อให้บริการด้านการเงิน เช่น การกู้ยืม การลงทุน
           </p>
@@ -42,7 +42,7 @@ const WhyWaxoSection = () => {
         <div className="flex flex-col text-center items-center gap-y-4">
           <Image src="/broker.svg" width="200" height="200" alt="broker" />
           <h3 className="text-lg md:text-xl font-medium">Broker</h3>
-          <p className="text-sm md:text-md text-center">
+          <p className="text-sm md:text-base text-center">
             นายหน้าหรือบริษัทตัวกลางที่ให้บริการซื้อขายหลักทรัพย์ เช่น หุ้น
             คริปโต หรือฟอเร็กซ์ โดยเชื่อมผู้ใช้งานกับตลาด
           </p>
@@ -50,7 +50,7 @@ const WhyWaxoSection = () => {
         <div className="flex flex-col text-center items-center gap-y-4">
           <Image src="/payment.svg" width="200" height="200" alt="payment" />
           <h3 className="text-lg md:text-xl font-medium">Payment</h3>
-          <p className="text-sm md:text-md text-center">
+          <p className="text-sm md:text-base text-center">
             ผู้ให้บริการระบบชำระเงินที่ช่วยให้การโอนเงิน การรับจ่าย
             หรือทำธุรกรรมออนไลน์เป็นเรื่องง่าย รวดเร็ว และปลอดภัย
           </p>

@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <section className="mt-auto">
       <div className="flex justify-center items-center py-2 px-12 bg-slate-800">
-        <p className="text-xs md: text-md text-white text-center">
+        <p className="text-xs md: text-base text-white text-center">
           <b>
             © 2025{" "}
             <a

@@ -75,7 +75,7 @@ const CompanyFilter = ({ totalCompanies, categories, filterRef }) => {
         <h3 className="text-xl md:text-2xl font-bold text-center md:text-start">
           ระบบกรองการค้นหา
         </h3>
-        <p className="text-sm md:text-md font-bold text-center md:text-start text-slate-500">
+        <p className="text-sm md:text-base font-bold text-center md:text-start text-slate-500">
           1-{pageLimit} จาก {totalCompanies} ผลลัพธ์
         </p>
 

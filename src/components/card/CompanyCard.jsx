@@ -12,8 +12,8 @@ const CompanyCard = ({ company }) => {
         <StarRating score={company.averageScore} />
       </div>
       <div className="flex gap-x-3 justify-between items-end">
-        <h4 className="text-md md:text-lg font-bold">{company.name}</h4>
-        <span className="text-sm md:text-md text-blue-500 group-hover:text-blue-400 group-hover:underline font-semibold">
+        <h4 className="text-base md:text-lg font-bold">{company.name}</h4>
+        <span className="text-sm md:text-base text-blue-500 group-hover:text-blue-400 group-hover:underline font-semibold">
           Read More
         </span>
       </div>

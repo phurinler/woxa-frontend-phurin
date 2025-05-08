@@ -12,7 +12,7 @@ const HeroSection = ({ filterRef }) => {
         <h2 className="text-2xl md:text-3xl font-bold text-center md:text-start">
           ค้นหาบริษัทการเงินที่คุณวางใจได้
         </h2>
-        <p className="text-sm md:text-md text-center md:text-start">
+        <p className="text-sm md:text-base text-center md:text-start">
           สำรวจรีวิวจริงจากผู้ใช้งานจริง เพื่อช่วยคุณตัดสินใจเลือกบริษัท
           Fintech, โบรกเกอร์ และผู้ให้บริการชำระเงินที่เชื่อถือได้
           เปรียบเทียบข้อดี ข้อเสีย ก่อนตัดสินใจใช้บริการ

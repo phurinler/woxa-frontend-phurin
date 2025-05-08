@@ -26,7 +26,7 @@ const CompanyDrawer = ({ company }) => {
               <DrawerTitle className="text-xl md:text-2xl">
                 {company.name}
               </DrawerTitle>
-              <DrawerDescription className="text-md md:text-lg">
+              <DrawerDescription className="text-base md:text-lg">
                 {company.description}
               </DrawerDescription>
             </div>
